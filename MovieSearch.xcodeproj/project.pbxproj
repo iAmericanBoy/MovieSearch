@@ -14,6 +14,7 @@
 		B6CED2E5220DE665005DD42C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CED2E4220DE665005DD42C /* Movie.swift */; };
 		B6CED2E8220DE7DB005DD42C /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CED2E7220DE7DB005DD42C /* MovieController.swift */; };
 		B6CED2EC220DEC64005DD42C /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CED2EB220DEC64005DD42C /* MovieListViewController.swift */; };
+		B6CED2F0220DF1D0005DD42C /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CED2EF220DF1D0005DD42C /* MovieTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B6CED2E4220DE665005DD42C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		B6CED2E7220DE7DB005DD42C /* MovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieController.swift; sourceTree = "<group>"; };
 		B6CED2EB220DEC64005DD42C /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		B6CED2EF220DF1D0005DD42C /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				B6CED2EB220DEC64005DD42C /* MovieListViewController.swift */,
+				B6CED2EF220DF1D0005DD42C /* MovieTableViewCell.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			files = (
 				B6CED2E8220DE7DB005DD42C /* MovieController.swift in Sources */,
 				B6CED2E5220DE665005DD42C /* Movie.swift in Sources */,
+				B6CED2F0220DF1D0005DD42C /* MovieTableViewCell.swift in Sources */,
 				B6CED2D1220DE2E4005DD42C /* AppDelegate.swift in Sources */,
 				B6CED2EC220DEC64005DD42C /* MovieListViewController.swift in Sources */,
 			);
