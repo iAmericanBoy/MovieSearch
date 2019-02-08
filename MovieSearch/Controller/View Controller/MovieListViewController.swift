@@ -29,10 +29,8 @@ class MovieListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        MovieController.fetchMovieWith(name: "Star Wars") { (movieList) in
-            self.movies = movieList
+        searchBar.delegate = self
 
-        }
     }
     
 
@@ -47,16 +45,40 @@ class MovieListViewController: UIViewController {
     */
 
 }
+
 //MARK: - TableViewDataSource, TableViewDelegate
 extension MovieListViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return movies.count == 0 ? 1 : movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieTableViewCell
         
-        cell?.movie = movies[indexPath.row]
-        return cell ?? UITableViewCell()
+        switch movies.count  {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "emptyMovieCell", for: indexPath)
+            
+            cell.textLabel?.text = "No movies Found"
+            
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieTableViewCell
+            
+            cell?.movie = movies[indexPath.row]
+            return cell ?? UITableViewCell()
+        }
+
+    }
+}
+
+//MARK: - SearchBarDelegate
+extension MovieListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let movieName = searchBar.text else {return}
+        searchBar.resignFirstResponder()
+        MovieController.fetchMovieWith(name: movieName) { (movieList) in
+            self.movies = movieList
+            
+        }
     }
 }

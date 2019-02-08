@@ -47,7 +47,6 @@ class MovieController {
                 completion([])
                 return
             }
-            print("urlResonse: \(response)")
             
             guard let data = data else {
                 print("Could not unwrap data")
@@ -89,7 +88,6 @@ class MovieController {
                 completion(nil)
                 return
             }
-            print("urlResonse: \(response)")
             
             guard let data = data else {
                 print("Could not unwrap data")
