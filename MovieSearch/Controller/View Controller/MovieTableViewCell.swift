@@ -25,6 +25,11 @@ class MovieTableViewCell: UITableViewCell {
     //MARK: - Private Functions
     private func updateViews() {
         guard let movie = movie else {return}
+        MovieController.fetchImageFrom(movie: movie) { (movieImage) in
+            DispatchQueue.main.async {
+                self.movieImageView.image = movieImage
+            }
+        }
         nameLabel.text = movie.title
         ratingLabel.text = "Rating: \(movie.rating ?? 0)"
         summaryLabel.text = movie.overview
