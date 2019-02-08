@@ -11,9 +11,9 @@ import Foundation
 
 struct Movie: Codable {
     let title: String
-    let id: Int
+    let id: Int?
     let overview: String
-    let rating: Float
+    let rating: Double?
     let posterURLAsString: String
     let releaseDate: String
     
@@ -25,4 +25,8 @@ struct Movie: Codable {
         case posterURLAsString = "poster_path"
         case releaseDate = "release_date"
     }
+}
+
+struct TopLevelJSON: Codable {
+    let results: [Movie]
 }

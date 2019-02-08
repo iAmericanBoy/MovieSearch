@@ -13,6 +13,7 @@
 		B6CED2DB220DE2E7005DD42C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6CED2D9220DE2E7005DD42C /* LaunchScreen.storyboard */; };
 		B6CED2E5220DE665005DD42C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CED2E4220DE665005DD42C /* Movie.swift */; };
 		B6CED2E8220DE7DB005DD42C /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CED2E7220DE7DB005DD42C /* MovieController.swift */; };
+		B6CED2EC220DEC64005DD42C /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CED2EB220DEC64005DD42C /* MovieListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B6CED2DC220DE2E7005DD42C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6CED2E4220DE665005DD42C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		B6CED2E7220DE7DB005DD42C /* MovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieController.swift; sourceTree = "<group>"; };
+		B6CED2EB220DEC64005DD42C /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +61,7 @@
 				B6CED2D0220DE2E4005DD42C /* AppDelegate.swift */,
 				B6CED2E6220DE671005DD42C /* Model */,
 				B6CED2E3220DE310005DD42C /* Views */,
-				B6CED2EA220DE7EF005DD42C /* ModelController */,
+				B6CED2EE220DEC75005DD42C /* Controller */,
 				B6CED2E2220DE306005DD42C /* Resources */,
 			);
 			path = MovieSearch;
@@ -97,6 +99,23 @@
 				B6CED2E7220DE7DB005DD42C /* MovieController.swift */,
 			);
 			path = ModelController;
+			sourceTree = "<group>";
+		};
+		B6CED2ED220DEC68005DD42C /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B6CED2EB220DEC64005DD42C /* MovieListViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		B6CED2EE220DEC75005DD42C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B6CED2ED220DEC68005DD42C /* View Controller */,
+				B6CED2EA220DE7EF005DD42C /* ModelController */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +192,7 @@
 				B6CED2E8220DE7DB005DD42C /* MovieController.swift in Sources */,
 				B6CED2E5220DE665005DD42C /* Movie.swift in Sources */,
 				B6CED2D1220DE2E4005DD42C /* AppDelegate.swift in Sources */,
+				B6CED2EC220DEC64005DD42C /* MovieListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6B8ZX28ZW;
-				INFOPLIST_FILE = MovieSearch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MovieSearch/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -338,7 +358,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6B8ZX28ZW;
-				INFOPLIST_FILE = MovieSearch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MovieSearch/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

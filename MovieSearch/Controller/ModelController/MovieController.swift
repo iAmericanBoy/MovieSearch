@@ -54,8 +54,8 @@ class MovieController {
             
             do {
                 let decoder = JSONDecoder()
-                let movies = try decoder.decode([String:[Movie]].self, from: data)
-                completion(movies["results"] ?? [])
+                let movies = try decoder.decode(TopLevelJSON.self, from: data)
+                completion(movies.results )
             } catch {
                 print("Could not decode movieJSON")
                 completion([])
