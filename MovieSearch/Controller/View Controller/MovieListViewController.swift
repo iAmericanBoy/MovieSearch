@@ -31,6 +31,9 @@ class MovieListViewController: UIViewController {
         
         MovieController.fetchMovieWith(name: "Star Wars") { (movieList) in
             self.movies = movieList
+            MovieController.fetchImageFrom(movie: movieList[0], completion: { (image) in
+                print(image)
+            })
         }
     }
     

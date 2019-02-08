@@ -6,13 +6,16 @@
 //  Copyright © 2019 Dominic Lanzillotta. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class MovieController {
     //MARK: - BaseURl
     static var baseURL = URL(string: "https://api.themoviedb.org/3/search/movie")
     
-    //MARK: - Read Movie
+    //MARK: - ImageBaseURl
+    static var imageBaseURL = URL(string: "http://image.tmdb.org/t/p/w500")
+    
+    //MARK: - Fetch Movie
     static func fetchMovieWith(name: String, completion: @escaping ([Movie]) -> Void) {
         guard let url = baseURL  else {
             print("Could not unwrapp BaseURl")
@@ -60,6 +63,41 @@ class MovieController {
                 print("Could not decode movieJSON")
                 completion([])
             }
+        }
+        dataTask.resume()
+    }
+    
+    //MARK: - Fetch Image
+    static func fetchImageFrom(movie: Movie ,completion: @escaping (UIImage?) -> Void) {
+        guard let pictureURL = imageBaseURL?.appendingPathComponent(movie.posterURLAsString)  else {
+            print("Could not unwrapp BaseURl")
+            completion(nil)
+            return
+        }
+        
+        print("pictureURL: \(pictureURL)")
+        
+        let dataTask = URLSession.shared.dataTask(with: pictureURL) { (data, urlResponse, error) in
+            if let error = error {
+                print("An error in function \(#function) has occured: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let response = urlResponse else {
+                print("Could not unwrap urlResponse")
+                completion(nil)
+                return
+            }
+            print("urlResonse: \(response)")
+            
+            guard let data = data else {
+                print("Could not unwrap data")
+                completion(nil)
+                return
+            }
+            
+            completion(UIImage(data: data))
         }
         dataTask.resume()
     }
